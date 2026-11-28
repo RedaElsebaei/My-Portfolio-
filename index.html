@@ -175,8 +175,8 @@ let S=JSON.parse(dataEl.textContent);
 if(!S.en){const p=S.photo;delete S.photo;S={en:S,ar:null,photo:p}}
 let L=(/^#ar$/i.test(location.hash)||new URLSearchParams(location.search).get('lang')==='ar')&&S.ar?'ar':'en';
 let D=S[L];
-const UI={en:{about:"About",services:"Services",exp:"Experience",cons:"Consultancy",quals:"Qualifications",touch:"Get in touch",seeSvc:"See freelance services",emailMe:"Email me",portrait:"Portrait of",svcH:"Freelance services",proposal:"Request a proposal",receive:"You receive",suits:"Suits",how:"How an assignment runs",orgs:"Organizations I have worked with",emp:"Employment",consH:"Consultancy & freelance",edu:"Education",langs:"Languages",certs:"Training & certifications",skills:"Skills",email:"Email",mobile:"Mobile",li:"LinkedIn",view:"View profile",loc:"Location",sw:"العربية",swl:"Switch to Arabic"},
- ar:{about:"نبذة",services:"الخدمات",exp:"الخبرات",cons:"الاستشارات",quals:"المؤهلات",touch:"تواصل معي",seeSvc:"اطّلع على الخدمات",emailMe:"راسلني",portrait:"صورة",svcH:"خدمات العمل الحر",proposal:"اطلب عرضًا",receive:"ما ستحصل عليه",suits:"يناسب",how:"كيف تسير المهمة",orgs:"جهات عملت معها",emp:"الخبرات الوظيفية",consH:"الاستشارات والعمل الحر",edu:"التعليم",langs:"اللغات",certs:"الدورات والشهادات",skills:"المهارات",email:"البريد الإلكتروني",mobile:"الموبايل",li:"LinkedIn",view:"عرض الملف",loc:"الموقع",sw:"English",swl:"التحويل إلى الإنجليزية"}};
+const UI={en:{cv:"View my CV",about:"About",services:"Services",exp:"Experience",cons:"Consultancy",quals:"Qualifications",touch:"Get in touch",seeSvc:"See freelance services",emailMe:"Email me",portrait:"Portrait of",svcH:"Freelance services",proposal:"Request a proposal",receive:"You receive",suits:"Suits",how:"How an assignment runs",orgs:"Organizations I have worked with",emp:"Employment",consH:"Consultancy & freelance",edu:"Education",langs:"Languages",certs:"Training & certifications",skills:"Skills",email:"Email",mobile:"Mobile",li:"LinkedIn",view:"View profile",loc:"Location",sw:"العربية",swl:"Switch to Arabic"},
+ ar:{cv:"اعرض سيرتي الذاتية",about:"نبذة",services:"الخدمات",exp:"الخبرات",cons:"الاستشارات",quals:"المؤهلات",touch:"تواصل معي",seeSvc:"اطّلع على الخدمات",emailMe:"راسلني",portrait:"صورة",svcH:"خدمات العمل الحر",proposal:"اطلب عرضًا",receive:"ما ستحصل عليه",suits:"يناسب",how:"كيف تسير المهمة",orgs:"جهات عملت معها",emp:"الخبرات الوظيفية",consH:"الاستشارات والعمل الحر",edu:"التعليم",langs:"اللغات",certs:"الدورات والشهادات",skills:"المهارات",email:"البريد الإلكتروني",mobile:"الموبايل",li:"LinkedIn",view:"عرض الملف",loc:"الموقع",sw:"English",swl:"التحويل إلى الإنجليزية"}};
 const U=k=>UI[L][k];
 let saved=dataEl.textContent;
 let editing=false,dirty=false,art=null,canEdit=false;
@@ -217,7 +217,7 @@ ${editing?`<div class="editbanner">${fileMode?'Editing — click any outlined te
    ${E('name','h1')}
    ${E('tagline','p','tag')}
    ${E('heroNote','p','note')}
-   <div class="actions"><a class="btn primary" href="#services">${U('seeSvc')}</a><a class="btn ghost" href="mailto:${esc(c.email)}">${U('emailMe')}</a></div>
+   <div class="actions"><a class="btn primary" href="#services">${U('seeSvc')}</a><a class="btn ghost" href="CV.pdf" target="_blank" rel="noopener">${U('cv')}</a><a class="btn ghost" href="mailto:${esc(c.email)}">${U('emailMe')}</a></div>
   </div>
   <div class="portrait"><span class="q q1"></span><span class="q q4"></span><div class="ph"><img src="${esc(S.photo)}" alt="${U('portrait')} ${esc(D.name)}"></div></div>
  </div>
